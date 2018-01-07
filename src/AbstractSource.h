@@ -11,12 +11,15 @@ class AbstractSource : public ofx::piMapper::FboSource {
 		void draw();
         void reset();
         void setName(string _name);
-        void setFadeIn(int _fadeInMode);
+        void setFadeIn(int _fadeMode);
+        void setFadeOut(int _fadeMode, float after);
     
         float c_min {C_MIN};
         float c_max {C_MAX};
     
         int fadeInMode {0};
+        int fadeOutMode {0};
+        float fadeOutAfter {-1};
         float startTime;
     
 };

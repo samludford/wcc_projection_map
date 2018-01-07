@@ -9,9 +9,10 @@
 #define Macros_h
 
 #define FADE_IN 2000.0
+#define FADE_OUT 2000.0
 #define NONE 0
-#define FROM_MAX 1
-#define FROM_MIN 2
+#define FADE_MAX 1
+#define FADE_MIN 2
 
 #define C_MAX 255.0
 #define C_MIN 0.0

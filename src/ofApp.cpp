@@ -14,7 +14,7 @@ void ofApp::setup(){
 	// a surface in XML settings.
     depthSquaresSource = new DepthSquaresSource();
     depthSquaresSource->setup();
-    depthSquaresSource->setFadeIn(NONE);
+    depthSquaresSource->setFadeOut(FADE_MIN, 4000.0);
     piMapper.registerFboSource(depthSquaresSource);
     
     squidSource = new SquidSource();
