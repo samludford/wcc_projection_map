@@ -12,6 +12,11 @@
 		1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 907C5B5E104864A2D3A25745 /* ofxToggle.cpp */; };
 		1F4453EA1589AD79F4B34493 /* RadioList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4048CA09E6AAB5F673CBD2F0 /* RadioList.cpp */; };
 		21B18AC78EBFC1FD28C614D5 /* TextureMappingMode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B16277019B0C4B684E1B063E /* TextureMappingMode.cpp */; };
+		223961E6200264210082649F /* DepthSquaresSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961E4200264200082649F /* DepthSquaresSource.cpp */; };
+		223961E9200266F70082649F /* SquidSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961E8200266F70082649F /* SquidSource.cpp */; };
+		223961EC20026C360082649F /* SimpleLinesSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961EB20026C360082649F /* SimpleLinesSource.cpp */; };
+		223961EF20026DBE0082649F /* TendrilsSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961ED20026DBD0082649F /* TendrilsSource.cpp */; };
+		223961F22002709E0082649F /* ParticlesSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961F02002709D0082649F /* ParticlesSource.cpp */; };
 		23963D6D8F0085D5DD2DF394 /* TogglePerspectiveCmd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 655142313A378162E3929785 /* TogglePerspectiveCmd.cpp */; };
 		25F5CD753AF35B53464E56AE /* MvTexCoordCmd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0739F09627790055C959BBF4 /* MvTexCoordCmd.cpp */; };
 		274AEF0299D77E27C0C5B205 /* ProjectionEditorWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18DA1B30717C876AA19CEEC0 /* ProjectionEditorWidget.cpp */; };
@@ -160,6 +165,16 @@
 		20F9951441118A70E8D55E13 /* DirectoryWatcher.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = DirectoryWatcher.cpp; path = ../../../addons/ofxPiMapper/src/MediaServer/DirectoryWatcher.cpp; sourceTree = SOURCE_ROOT; };
 		21167F26AF957606289D4A4A /* ToggleAnimatedSourceCmd.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ToggleAnimatedSourceCmd.h; path = ../../../addons/ofxPiMapper/src/Commands/ToggleAnimatedSourceCmd.h; sourceTree = SOURCE_ROOT; };
 		21BDE665988474F1B1F4D302 /* jsoncpp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = jsoncpp.cpp; path = ../../../addons/ofxJSON/libs/jsoncpp/src/jsoncpp.cpp; sourceTree = SOURCE_ROOT; };
+		223961E4200264200082649F /* DepthSquaresSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DepthSquaresSource.cpp; sourceTree = "<group>"; };
+		223961E5200264200082649F /* DepthSquaresSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthSquaresSource.h; sourceTree = "<group>"; };
+		223961E7200266F70082649F /* SquidSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquidSource.h; sourceTree = "<group>"; };
+		223961E8200266F70082649F /* SquidSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SquidSource.cpp; sourceTree = "<group>"; };
+		223961EA20026C360082649F /* SimpleLinesSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleLinesSource.h; sourceTree = "<group>"; };
+		223961EB20026C360082649F /* SimpleLinesSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleLinesSource.cpp; sourceTree = "<group>"; };
+		223961ED20026DBD0082649F /* TendrilsSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TendrilsSource.cpp; sourceTree = "<group>"; };
+		223961EE20026DBE0082649F /* TendrilsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TendrilsSource.h; sourceTree = "<group>"; };
+		223961F02002709D0082649F /* ParticlesSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticlesSource.cpp; sourceTree = "<group>"; };
+		223961F12002709E0082649F /* ParticlesSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticlesSource.h; sourceTree = "<group>"; };
 		23118136CC7FFA920626B6C3 /* TriangleSurface.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TriangleSurface.h; path = ../../../addons/ofxPiMapper/src/Surfaces/TriangleSurface.h; sourceTree = SOURCE_ROOT; };
 		231337763726D333E0B3D56C /* AddGridColCmd.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = AddGridColCmd.cpp; path = ../../../addons/ofxPiMapper/src/Commands/AddGridColCmd.cpp; sourceTree = SOURCE_ROOT; };
 		23A4F0C9DE47BA73B3E49EDE /* ScaleWidget.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ScaleWidget.h; path = ../../../addons/ofxPiMapper/src/Gui/Widgets/ScaleWidget.h; sourceTree = SOURCE_ROOT; };
@@ -677,6 +692,16 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				223961F02002709D0082649F /* ParticlesSource.cpp */,
+				223961F12002709E0082649F /* ParticlesSource.h */,
+				223961ED20026DBD0082649F /* TendrilsSource.cpp */,
+				223961EE20026DBE0082649F /* TendrilsSource.h */,
+				223961EB20026C360082649F /* SimpleLinesSource.cpp */,
+				223961EA20026C360082649F /* SimpleLinesSource.h */,
+				223961E8200266F70082649F /* SquidSource.cpp */,
+				223961E7200266F70082649F /* SquidSource.h */,
+				223961E4200264200082649F /* DepthSquaresSource.cpp */,
+				223961E5200264200082649F /* DepthSquaresSource.h */,
 				EE5F54EF1FD535E200A10A3A /* BouncingBallsSource.cpp */,
 				EE5F54F51FD535E300A10A3A /* BouncingBallsSource.h */,
 				EE5F54EE1FD535E200A10A3A /* MovingRectSource.cpp */,
@@ -881,9 +906,11 @@
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
+				223961EF20026DBE0082649F /* TendrilsSource.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
+				223961E9200266F70082649F /* SquidSource.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
@@ -891,6 +918,7 @@
 				BEDFEE7400C58EA4E412B757 /* ofxJSONElement.cpp in Sources */,
 				FB84AAF8D1B7A95266DB5C09 /* jsoncpp.cpp in Sources */,
 				83CACB24937919003F2F9B63 /* HomographyHelper.cpp in Sources */,
+				223961E6200264210082649F /* DepthSquaresSource.cpp in Sources */,
 				F3EACD31EE5E141FF66C48BD /* Info.cpp in Sources */,
 				EE5F54F81FD535E300A10A3A /* SceneManager.cpp in Sources */,
 				92527EF632E7EC0E96BC329C /* MediaServer.cpp in Sources */,
@@ -901,6 +929,7 @@
 				9CAA3B0DFD59840998C832DA /* TextureHighlightWidget.cpp in Sources */,
 				FB03F0A6D7866DFC55F519EB /* SourcesEditorWidget.cpp in Sources */,
 				274AEF0299D77E27C0C5B205 /* ProjectionEditorWidget.cpp in Sources */,
+				223961F22002709E0082649F /* ParticlesSource.cpp in Sources */,
 				8A3D6CE0A4338871766366B6 /* SurfaceHighlightWidget.cpp in Sources */,
 				4D2D4455339FC8C955091C88 /* TextureEditorWidget.cpp in Sources */,
 				7702233BBFB6E8D9E8B93CBC /* FboSource.cpp in Sources */,
@@ -936,6 +965,7 @@
 				67FF225B68ECC1942C833BFE /* SelNextSurfaceCmd.cpp in Sources */,
 				B1EEE5A7EC1876072BF8F7FE /* AddSurfaceCmd.cpp in Sources */,
 				60C8089351E49CF344577098 /* SelNextTexCoordCmd.cpp in Sources */,
+				223961EC20026C360082649F /* SimpleLinesSource.cpp in Sources */,
 				8CA6C92E3D4F91750BC469FF /* MvAllTexCoordsCmd.cpp in Sources */,
 				C8D7FA44AA0565654A681157 /* DeselectSurfaceCmd.cpp in Sources */,
 				EE5F54F61FD535E300A10A3A /* MovingRectSource.cpp in Sources */,

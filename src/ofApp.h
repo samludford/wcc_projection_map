@@ -5,6 +5,13 @@
 #include "ofxPiMapper.h"
 #include "BouncingBallsSource.h"
 #include "MovingRectSource.h"
+
+#include "DepthSquaresSource.h"
+#include "SquidSource.h"
+#include "SimpleLinesSource.h"
+#include "TendrilsSource.h"
+#include "ParticlesSource.h"
+
 #include "VideoSource.h"
 #include "SceneManager.h"
 
@@ -25,8 +32,12 @@ class ofApp : public ofBaseApp {
 
 		ofxPiMapper piMapper;
 
-		// By using a custom source that is derived from FboSource
-		// you will be able to see the source listed in sources editor
+        DepthSquaresSource * depthSquaresSource;
+        SquidSource * squidSource;
+        SimpleLinesSource * simpleLinesSource;
+        TendrilsSource * tendrilsSource;
+        ParticlesSource * particlesSource;
+    
         BouncingBallsSource * bouncingBallsSource;
         MovingRectSource * movingRectSource;
         ofImage dummyObjects;

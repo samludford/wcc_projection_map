@@ -12,6 +12,26 @@ void ofApp::setup(){
 	// FBO sources should be added before piMapper.setup() so the
 	// piMapper is able to load the source if it is assigned to
 	// a surface in XML settings.
+    depthSquaresSource = new DepthSquaresSource();
+    depthSquaresSource->setup();
+    piMapper.registerFboSource(depthSquaresSource);
+    
+    squidSource = new SquidSource();
+    squidSource->setup();
+    piMapper.registerFboSource(squidSource);
+    
+    simpleLinesSource = new SimpleLinesSource();
+    simpleLinesSource->setup();
+    piMapper.registerFboSource(simpleLinesSource);
+    
+    tendrilsSource = new TendrilsSource();
+    tendrilsSource->setup();
+    piMapper.registerFboSource(tendrilsSource);
+    
+    particlesSource = new ParticlesSource();
+    particlesSource->setup();
+    piMapper.registerFboSource(particlesSource);
+    
     bouncingBallsSource = new BouncingBallsSource();
     bouncingBallsSource->setup();
     piMapper.registerFboSource(bouncingBallsSource);
