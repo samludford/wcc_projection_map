@@ -1,6 +1,7 @@
 #include "TendrilsSource.h"
 
 void TendrilsSource::setup(){
+    AbstractSource::setup();
     name = "Tendrils Squares Source";
 //    rectColor = ofColor(255);
     allocate(800, 800);
@@ -22,19 +23,13 @@ void TendrilsSource::setup(){
 }
 
 void TendrilsSource::reset(){
-    //reset is called optionally. if you leave it empty nothing is happening
-//    rectColor = ofColor(ofRandom(255),ofRandom(255),ofRandom(255));
-    // setup
-}
-
-void TendrilsSource::setName(string _name){
-    name = _name;
+    AbstractSource::reset();
 }
 
 
-// Don't do any drawing here
 void TendrilsSource::update(){
-    // move particles
+    AbstractSource::update();
+    
     for(int i=0 ; i < parts_dark.size() ; i++) {
         parts_dark[i].y += VEL;
         // put it back to the top
@@ -44,8 +39,7 @@ void TendrilsSource::update(){
     }
 }
 
-// No need to take care of fbo.begin() and fbo.end() here.
-// All within draw() is being rendered into fbo;
+
 void TendrilsSource::draw(){
     ofClear(0); //clear the buffer
     

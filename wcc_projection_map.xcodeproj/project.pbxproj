@@ -20,6 +20,8 @@
 		223961F5200278FD0082649F /* FlashSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961F4200278FD0082649F /* FlashSource.cpp */; };
 		223961F8200286D20082649F /* WhiteSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961F7200286D10082649F /* WhiteSource.cpp */; };
 		223961FB2002887A0082649F /* BlackSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961FA2002887A0082649F /* BlackSource.cpp */; };
+		223961FE200289FF0082649F /* LineMoveSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961FD200289FF0082649F /* LineMoveSource.cpp */; };
+		223962062002A6700082649F /* AbstractSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223962042002A66F0082649F /* AbstractSource.cpp */; };
 		23963D6D8F0085D5DD2DF394 /* TogglePerspectiveCmd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 655142313A378162E3929785 /* TogglePerspectiveCmd.cpp */; };
 		25F5CD753AF35B53464E56AE /* MvTexCoordCmd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0739F09627790055C959BBF4 /* MvTexCoordCmd.cpp */; };
 		274AEF0299D77E27C0C5B205 /* ProjectionEditorWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18DA1B30717C876AA19CEEC0 /* ProjectionEditorWidget.cpp */; };
@@ -184,6 +186,11 @@
 		223961F7200286D10082649F /* WhiteSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WhiteSource.cpp; sourceTree = "<group>"; };
 		223961F9200288790082649F /* BlackSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackSource.h; sourceTree = "<group>"; };
 		223961FA2002887A0082649F /* BlackSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlackSource.cpp; sourceTree = "<group>"; };
+		223961FC200289FE0082649F /* LineMoveSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineMoveSource.h; sourceTree = "<group>"; };
+		223961FD200289FF0082649F /* LineMoveSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineMoveSource.cpp; sourceTree = "<group>"; };
+		223961FF20029A5C0082649F /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		223962042002A66F0082649F /* AbstractSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractSource.cpp; sourceTree = "<group>"; };
+		223962052002A66F0082649F /* AbstractSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractSource.h; sourceTree = "<group>"; };
 		23118136CC7FFA920626B6C3 /* TriangleSurface.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TriangleSurface.h; path = ../../../addons/ofxPiMapper/src/Surfaces/TriangleSurface.h; sourceTree = SOURCE_ROOT; };
 		231337763726D333E0B3D56C /* AddGridColCmd.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = AddGridColCmd.cpp; path = ../../../addons/ofxPiMapper/src/Commands/AddGridColCmd.cpp; sourceTree = SOURCE_ROOT; };
 		23A4F0C9DE47BA73B3E49EDE /* ScaleWidget.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ScaleWidget.h; path = ../../../addons/ofxPiMapper/src/Gui/Widgets/ScaleWidget.h; sourceTree = SOURCE_ROOT; };
@@ -701,6 +708,10 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				223962042002A66F0082649F /* AbstractSource.cpp */,
+				223962052002A66F0082649F /* AbstractSource.h */,
+				223961FD200289FF0082649F /* LineMoveSource.cpp */,
+				223961FC200289FE0082649F /* LineMoveSource.h */,
 				223961FA2002887A0082649F /* BlackSource.cpp */,
 				223961F9200288790082649F /* BlackSource.h */,
 				223961F7200286D10082649F /* WhiteSource.cpp */,
@@ -728,6 +739,7 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				223961FF20029A5C0082649F /* Macros.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -967,6 +979,7 @@
 				800748EF057A284D9DA82F60 /* SelPrevTexCoordCmd.cpp in Sources */,
 				D88BA6D139757ED4E1669796 /* AddGridRowCmd.cpp in Sources */,
 				93760FE8B10EBD4081251E10 /* CmdManager.cpp in Sources */,
+				223961FE200289FF0082649F /* LineMoveSource.cpp in Sources */,
 				6438655B2AE4DDA2743241EC /* ToggleAnimatedSourceCmd.cpp in Sources */,
 				25F5CD753AF35B53464E56AE /* MvTexCoordCmd.cpp in Sources */,
 				D61A46C1800537BA43C7884F /* DuplicateSurfaceCmd.cpp in Sources */,
@@ -986,6 +999,7 @@
 				8CA6C92E3D4F91750BC469FF /* MvAllTexCoordsCmd.cpp in Sources */,
 				C8D7FA44AA0565654A681157 /* DeselectSurfaceCmd.cpp in Sources */,
 				EE5F54F61FD535E300A10A3A /* MovingRectSource.cpp in Sources */,
+				223962062002A6700082649F /* AbstractSource.cpp in Sources */,
 				28F5415281F8D09BBC098355 /* TranslateCanvasCmd.cpp in Sources */,
 				90DE06EA59944C1BEA539719 /* SetApplicationModeCmd.cpp in Sources */,
 				82643E358DF270B9EC939699 /* RmGridColCmd.cpp in Sources */,

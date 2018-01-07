@@ -2,19 +2,18 @@
 
 #include "ofMain.h"
 #include "FboSource.h"
+#include "AbstractSource.h"
 
-class ParticlesSource : public ofx::piMapper::FboSource {
+class ParticlesSource : public AbstractSource {
 	public:
         void setup();
 		void update();
 		void draw();
         void reset();
-        void setName(string _name);
+    
         float time;
     
         float vel_max {1.0};
-        float c_min {0};
-        float c_max {255};
     
         int part_count {100};
         float part_size {10.0};

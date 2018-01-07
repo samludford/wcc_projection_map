@@ -2,20 +2,26 @@
 
 #include "ofMain.h"
 #include "FboSource.h"
+#include "Macros.h"
+#include "AbstractSource.h"
 
-class DepthSquaresSource : public ofx::piMapper::FboSource {
+class DepthSquaresSource : public AbstractSource {
 	public:
+    
         void setup();
 		void update();
 		void draw();
         void reset();
-        void setName(string _name);
+        
         float time;
     
-        int loopLength {200};
-        int rectCount {100};
+        int loopLength {3000};
+        int rectCount {10};
         int drift {400};
         bool negative {true};
-        float c_min {0};
-        float c_max {255};
+
+    
+        
+    
+    
 };

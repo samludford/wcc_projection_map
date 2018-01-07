@@ -1,8 +1,9 @@
 #include "ParticlesSource.h"
 
 void ParticlesSource::setup(){
+    AbstractSource::setup();
     name = "Particles Source";
-//    rectColor = ofColor(255);
+
     allocate(800, 800);
     ofBackground(c_min);
     
@@ -32,18 +33,16 @@ void ParticlesSource::setup(){
 }
 
 void ParticlesSource::reset(){
+    AbstractSource::reset();
     //reset is called optionally. if you leave it empty nothing is happening
 //    rectColor = ofColor(ofRandom(255),ofRandom(255),ofRandom(255));
     // setup
 }
 
-void ParticlesSource::setName(string _name){
-    name = _name;
-}
-
 
 // Don't do any drawing here
 void ParticlesSource::update(){
+    AbstractSource::update();
     float t = ofGetFrameNum() / 100.0;
     for(int i=0 ; i < part_count ; i++) {
         

@@ -1,6 +1,7 @@
 #include "SimpleLinesSource.h"
 
 void SimpleLinesSource::setup(){
+    AbstractSource::setup();
     name = "Simple Lines Source";
     allocate(800, 800);
     ofBackground(c_min);
@@ -15,17 +16,16 @@ void SimpleLinesSource::setup(){
 }
 
 void SimpleLinesSource::reset(){
+    AbstractSource::reset();
     //reset is called optionally. if you leave it empty nothing is happening
     // setup
 }
 
-void SimpleLinesSource::setName(string _name){
-    name = _name;
-}
 
 
 // Don't do any drawing here
 void SimpleLinesSource::update(){
+    AbstractSource::update();
     float t = ofGetFrameNum() / 100.0;
     
     for(int i=0 ; i < positions.size() ; i++) {

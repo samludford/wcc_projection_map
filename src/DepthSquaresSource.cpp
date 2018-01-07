@@ -1,38 +1,32 @@
 #include "DepthSquaresSource.h"
 
 void DepthSquaresSource::setup(){
+    AbstractSource::setup();
     name = "Depth Squares Source";
-//    rectColor = ofColor(255);
     allocate(800, 800);
-    ofBackground(c_min);
-    
     drift = ofGetWidth() * 0.7;
 }
 
 void DepthSquaresSource::reset(){
-    //reset is called optionally. if you leave it empty nothing is happening
-//    rectColor = ofColor(ofRandom(255),ofRandom(255),ofRandom(255));
-    // setup
+    AbstractSource::reset();
 }
-
-void DepthSquaresSource::setName(string _name){
-    name = _name;
-}
-
 
 // Don't do any drawing here
 void DepthSquaresSource::update(){
+    AbstractSource::update();
+    
      time = ofGetFrameNum()*2;
 }
 
 // No need to take care of fbo.begin() and fbo.end() here.
 // All within draw() is being rendered into fbo;
 void DepthSquaresSource::draw(){
-    ofClear(0); //clear the buffer
+    ofClear(0);
     
     float t = (ofGetFrameNum() % loopLength) / (float) loopLength;
     ofPushMatrix();
     ofPushStyle();
+    ofBackground(c_min);
     ofSetRectMode(OF_RECTMODE_CENTER);
     ofSetColor(c_max);
     ofTranslate(fbo->getWidth()/2.0,fbo->getHeight()/2.0);
@@ -46,7 +40,7 @@ void DepthSquaresSource::draw(){
         float y = (1-p) * y_offset;
         ofPushMatrix();
         ofTranslate(x, y);
-        ofSetColor(c * 255);
+        ofSetColor(ofMap(c, 0.2,1,c_min,c_max));
         float rectSize = p * ofGetWidth();
         ofDrawRectangle(0, 0, rectSize, rectSize);
         ofPopMatrix();

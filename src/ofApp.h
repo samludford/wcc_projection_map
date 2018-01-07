@@ -14,6 +14,7 @@
 #include "FlashSource.h"
 #include "WhiteSource.h"
 #include "BlackSource.h"
+#include "LineMoveSource.h"
 
 #include "VideoSource.h"
 #include "SceneManager.h"
@@ -44,7 +45,7 @@ class ofApp : public ofBaseApp {
         BlackSource * blackSource;
     
         vector<FlashSource*> flashSources;
-
+        vector<LineMoveSource*> lineMoveSources;
     
         BouncingBallsSource * bouncingBallsSource;
         MovingRectSource * movingRectSource;

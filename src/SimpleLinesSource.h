@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "FboSource.h"
+#include "AbstractSource.h"
 
 #define WIDTH_DEFAULT 10.0
 #define VEL_MAX 10.0
@@ -9,18 +10,13 @@
 #define WIDTH_MAX 30.0
 #define WIDTH_MIN 1.0
 
-class SimpleLinesSource : public ofx::piMapper::FboSource {
+class SimpleLinesSource : public AbstractSource {
 	public:
         void setup();
 		void update();
 		void draw();
         void reset();
-        void setName(string _name);
         float time;
-    
-        
-        float c_min {0};
-        float c_max {255};
         int lineCount {50};
         vector<float> positions;
         vector<float> vels;

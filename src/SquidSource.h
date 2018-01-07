@@ -2,18 +2,16 @@
 
 #include "ofMain.h"
 #include "FboSource.h"
+#include "AbstractSource.h"
 
-class SquidSource : public ofx::piMapper::FboSource {
+class SquidSource : public AbstractSource {
 	public:
         void setup();
 		void update();
 		void draw();
         void reset();
-        void setName(string _name);
-        float time;
     
-        float c_min {0};
-        float c_max {255};
+        float time;
     
         float counter;
         float control_x1, control_y1;

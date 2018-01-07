@@ -1,6 +1,7 @@
 #include "SquidSource.h"
 
 void SquidSource::setup(){
+    AbstractSource::setup();
     name = "Squid Source";
 //    rectColor = ofColor(255);
     allocate(800, 800);
@@ -9,19 +10,16 @@ void SquidSource::setup(){
 }
 
 void SquidSource::reset(){
+    AbstractSource::reset();
     //reset is called optionally. if you leave it empty nothing is happening
 //    rectColor = ofColor(ofRandom(255),ofRandom(255),ofRandom(255));
     // setup
 }
 
-void SquidSource::setName(string _name){
-    name = _name;
-}
-
 
 // Don't do any drawing here
 void SquidSource::update(){
-    
+    AbstractSource::update();
     counter = ofGetFrameNum();
     control_x1 = ofMap(ofNoise(counter/200),0,1,-fbo->getWidth()/3,fbo->getWidth()/3);
     control_y1 = ofMap(ofNoise(counter/300+40),0,1,-fbo->getHeight()/3,fbo->getHeight()/3);
@@ -39,8 +37,9 @@ void SquidSource::draw(){
 //    ofDrawRectangle(20, 20, 60, 60);
     
     ofPushStyle();
+    ofBackground(c_max);
     ofSetLineWidth(3);
-    ofSetColor(c_max);
+    ofSetColor(c_min);
     
     ofPushMatrix();
     ofTranslate(fbo->getWidth()/2, fbo->getHeight()/2);

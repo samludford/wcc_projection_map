@@ -14,7 +14,7 @@ void ofApp::setup(){
 	// a surface in XML settings.
     depthSquaresSource = new DepthSquaresSource();
     depthSquaresSource->setup();
-    depthSquaresSource->setName("depth test");
+    depthSquaresSource->setFadeIn(NONE);
     piMapper.registerFboSource(depthSquaresSource);
     
     squidSource = new SquidSource();
@@ -45,10 +45,21 @@ void ofApp::setup(){
         FlashSource *fs = new FlashSource();
         fs->setup();
         fs->setName( "Flash Source " + ofToString(i));
-        fs->setDuration( 200.0 );
-        fs->setDelay( 200.0 * i );
+        fs->setDuration( 500.0 );
+        fs->setDelay( 500.0 * i );
         piMapper.registerFboSource(fs);
         flashSources.push_back(fs);
+    }
+    
+    for(int i=0; i<4 ; i++) {
+        float angle = i*90.0;
+        LineMoveSource *lms = new LineMoveSource();
+        lms->setup();
+        lms->setName( "Line Move Source " + ofToString(angle));
+        lms->setDuration( 3000.0 );
+        lms->setAngle(angle);
+        piMapper.registerFboSource(lms);
+        lineMoveSources.push_back(lms);
     }
     
     //
