@@ -11,6 +11,7 @@
 #include "SimpleLinesSource.h"
 #include "TendrilsSource.h"
 #include "ParticlesSource.h"
+#include "FlashSource.h"
 
 #include "VideoSource.h"
 #include "SceneManager.h"
@@ -37,6 +38,9 @@ class ofApp : public ofBaseApp {
         SimpleLinesSource * simpleLinesSource;
         TendrilsSource * tendrilsSource;
         ParticlesSource * particlesSource;
+    
+        vector<FlashSource*> flashSources;
+
     
         BouncingBallsSource * bouncingBallsSource;
         MovingRectSource * movingRectSource;
