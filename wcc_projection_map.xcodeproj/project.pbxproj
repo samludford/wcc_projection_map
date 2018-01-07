@@ -18,6 +18,8 @@
 		223961EF20026DBE0082649F /* TendrilsSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961ED20026DBD0082649F /* TendrilsSource.cpp */; };
 		223961F22002709E0082649F /* ParticlesSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961F02002709D0082649F /* ParticlesSource.cpp */; };
 		223961F5200278FD0082649F /* FlashSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961F4200278FD0082649F /* FlashSource.cpp */; };
+		223961F8200286D20082649F /* WhiteSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961F7200286D10082649F /* WhiteSource.cpp */; };
+		223961FB2002887A0082649F /* BlackSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223961FA2002887A0082649F /* BlackSource.cpp */; };
 		23963D6D8F0085D5DD2DF394 /* TogglePerspectiveCmd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 655142313A378162E3929785 /* TogglePerspectiveCmd.cpp */; };
 		25F5CD753AF35B53464E56AE /* MvTexCoordCmd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0739F09627790055C959BBF4 /* MvTexCoordCmd.cpp */; };
 		274AEF0299D77E27C0C5B205 /* ProjectionEditorWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18DA1B30717C876AA19CEEC0 /* ProjectionEditorWidget.cpp */; };
@@ -178,6 +180,10 @@
 		223961F12002709E0082649F /* ParticlesSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticlesSource.h; sourceTree = "<group>"; };
 		223961F3200278FD0082649F /* FlashSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashSource.h; sourceTree = "<group>"; };
 		223961F4200278FD0082649F /* FlashSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlashSource.cpp; sourceTree = "<group>"; };
+		223961F6200286D10082649F /* WhiteSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteSource.h; sourceTree = "<group>"; };
+		223961F7200286D10082649F /* WhiteSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WhiteSource.cpp; sourceTree = "<group>"; };
+		223961F9200288790082649F /* BlackSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackSource.h; sourceTree = "<group>"; };
+		223961FA2002887A0082649F /* BlackSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlackSource.cpp; sourceTree = "<group>"; };
 		23118136CC7FFA920626B6C3 /* TriangleSurface.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TriangleSurface.h; path = ../../../addons/ofxPiMapper/src/Surfaces/TriangleSurface.h; sourceTree = SOURCE_ROOT; };
 		231337763726D333E0B3D56C /* AddGridColCmd.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = AddGridColCmd.cpp; path = ../../../addons/ofxPiMapper/src/Commands/AddGridColCmd.cpp; sourceTree = SOURCE_ROOT; };
 		23A4F0C9DE47BA73B3E49EDE /* ScaleWidget.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ScaleWidget.h; path = ../../../addons/ofxPiMapper/src/Gui/Widgets/ScaleWidget.h; sourceTree = SOURCE_ROOT; };
@@ -695,6 +701,10 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				223961FA2002887A0082649F /* BlackSource.cpp */,
+				223961F9200288790082649F /* BlackSource.h */,
+				223961F7200286D10082649F /* WhiteSource.cpp */,
+				223961F6200286D10082649F /* WhiteSource.h */,
 				223961F4200278FD0082649F /* FlashSource.cpp */,
 				223961F3200278FD0082649F /* FlashSource.h */,
 				223961F02002709D0082649F /* ParticlesSource.cpp */,
@@ -944,6 +954,7 @@
 				588E33B9B0BD6F5A2E4DF31D /* OMXPlayerCache.cpp in Sources */,
 				95CB0A22296B3DB402835DCF /* ImageSource.cpp in Sources */,
 				892923A127FC7C57469FD078 /* BaseSource.cpp in Sources */,
+				223961FB2002887A0082649F /* BlackSource.cpp in Sources */,
 				84172554824F6959BA431E33 /* SetPresetCmd.cpp in Sources */,
 				F9A6B58165791682416A1685 /* ClearSurfacesCmd.cpp in Sources */,
 				4BF21A290FA6FE26B87B8971 /* SetNextSourceCmd.cpp in Sources */,
@@ -1006,6 +1017,7 @@
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
+				223961F8200286D20082649F /* WhiteSource.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

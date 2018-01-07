@@ -33,9 +33,13 @@ void ofApp::setup(){
     particlesSource->setup();
     piMapper.registerFboSource(particlesSource);
     
-    bouncingBallsSource = new BouncingBallsSource();
-    bouncingBallsSource->setup();
-    piMapper.registerFboSource(bouncingBallsSource);
+    whiteSource = new WhiteSource();
+    whiteSource->setup();
+    piMapper.registerFboSource(whiteSource);
+    
+    blackSource = new BlackSource();
+    blackSource->setup();
+    piMapper.registerFboSource(blackSource);
     
     for(int i=0; i<9 ; i++) {
         FlashSource *fs = new FlashSource();
@@ -46,6 +50,12 @@ void ofApp::setup(){
         piMapper.registerFboSource(fs);
         flashSources.push_back(fs);
     }
+    
+    //
+    
+    bouncingBallsSource = new BouncingBallsSource();
+    bouncingBallsSource->setup();
+    piMapper.registerFboSource(bouncingBallsSource);
 
     movingRectSource = new MovingRectSource();
     movingRectSource->setup();
