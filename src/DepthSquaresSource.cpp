@@ -17,8 +17,7 @@ void DepthSquaresSource::reset(){
 // Don't do any drawing here
 void DepthSquaresSource::update(){
     AbstractSource::update();
-    
-     time = ofGetFrameNum()*5;
+    time = ofGetFrameNum()*5;
 }
 
 void DepthSquaresSource::setNegative(bool _negative) {

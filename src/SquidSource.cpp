@@ -10,19 +10,6 @@ void SquidSource::setup(){
 
 void SquidSource::reset(){
     AbstractSource::reset();
-    //reset is called optionally. if you leave it empty nothing is happening
-//    rectColor = ofColor(ofRandom(255),ofRandom(255),ofRandom(255));
-    // setup
-//    startTime = ofGetElapsedTimeMillis();
-//    if(fadeInMode == FADE_MAX) {
-//        c_min = (negative) ? C_MAX : C_MIN;
-//    } else if(fadeInMode == FADE_MIN) {
-//        c_max = (negative) ? C_MIN : C_MAX;
-//    } else {
-//        c_min = (negative) ? C_MIN : C_MAX;
-//        c_max = (negative) ? C_MAX : C_MIN;
-//    }
-    
 }
 
 void SquidSource::setNegative(bool _negative) {

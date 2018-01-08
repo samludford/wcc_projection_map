@@ -22,8 +22,10 @@ void AbstractSource::reset(){
     startTime = ofGetElapsedTimeMillis();
     if(fadeInMode == FADE_MAX) {
         c_min = C_MAX;
+        c_max = C_MAX;
     } else if(fadeInMode == FADE_MIN) {
         c_max = C_MIN;
+        c_min = C_MIN;
     } else {
         c_min = C_MIN;
         c_max = C_MAX;
