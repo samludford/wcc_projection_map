@@ -145,12 +145,16 @@ void ofApp::setup(){
     piMapper.registerFboSource(depthSquaresSourceNeg);
     
     
-    
-    
-    
     whiteSource = new WhiteSource();
     whiteSource->setup();
+    whiteSource->setName("White Source");
     piMapper.registerFboSource(whiteSource);
+    
+    whiteSourceINOB = new WhiteSource();
+    whiteSourceINOB->setup();
+    whiteSourceINOB->setFadeOut(FADE_MIN, 8000.0);
+    whiteSourceINOB->setName("White Source INOB");
+    piMapper.registerFboSource(whiteSourceINOB);
     
     blackSource = new BlackSource();
     blackSource->setup();

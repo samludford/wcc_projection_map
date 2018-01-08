@@ -58,6 +58,7 @@ class ofApp : public ofBaseApp {
         vector<TendrilsSource*> tendrilsSources;
     
         WhiteSource * whiteSource;
+        WhiteSource * whiteSourceINOB;
         BlackSource * blackSource;
     
         BouncingBallsSource * bouncingBallsSource;

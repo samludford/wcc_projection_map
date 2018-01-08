@@ -2,9 +2,8 @@
 
 void WhiteSource::setup(){
     AbstractSource::setup();
-    name = "White Source";
+//    name = "White Source";
     allocate(800, 800);
-    
 }
 
 void WhiteSource::reset(){
