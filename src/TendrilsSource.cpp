@@ -2,7 +2,7 @@
 
 void TendrilsSource::setup(){
     AbstractSource::setup();
-    name = "Tendrils Squares Source";
+//    name = "Tendrils Squares Source";
 //    rectColor = ofColor(255);
     allocate(800, 800);
     
@@ -39,24 +39,46 @@ void TendrilsSource::update(){
     }
 }
 
+void TendrilsSource::setNegative(bool _negative) {
+    negative = _negative;
+}
+
+void TendrilsSource::setAngle(float _angle){
+    angle = _angle;
+}
+
 
 void TendrilsSource::draw(){
     ofClear(0); //clear the buffer
+
+    ofPushMatrix();
+    ofTranslate(fbo->getWidth()/2.0, fbo->getHeight()/2.0);
+    ofRotate(angle);
+    ofTranslate(-fbo->getWidth()/2.0, -fbo->getHeight()/2.0);
+    ofPushStyle();
+    if(!negative) {
+        ofBackground(c_max);
+//        ofSetColor(c_min);
+    } else {
+        ofBackground(c_min);
+//        ofSetColor(c_max);
+    }
     
     draw_stripes();
     
-    ofPushMatrix();
-    ofPushStyle();
-    
-    ofSetColor(c_min);
+    if(!negative) {
+//        ofBackground(c_max);
+        ofSetColor(c_max);
+    } else {
+//        ofBackground(c_min);
+        ofSetColor(c_min);
+    }
     
     float t = ofGetFrameNum() / 100.0;
     
     for(int i=0 ; i < parts_dark.size() ; i++) {
-        
         float n = ofMap(ofNoise(t, i),0,1,0,20);
         ofDrawCircle(parts_dark[i].x, parts_dark[i].y, n);
-        //        ofDrawCircle(parts_dark[i].x, parts_dark[i].y, part_size);
     }
     
     ofPopStyle();
@@ -68,7 +90,13 @@ void TendrilsSource::draw(){
 
 void TendrilsSource::draw_stripes() {
     ofPushStyle();
-    ofSetColor(c_max);
+    if(!negative) {
+//        ofBackground(c_max);
+        ofSetColor(c_min);
+    } else {
+//        ofBackground(c_min);
+        ofSetColor(c_max);
+    }
     for(int i=0 ; i < tendrilCount ; i+=2) {
         ofDrawRectangle(i * tendrilWidth, 0, tendrilWidth, fbo->getHeight());
     }

@@ -37,18 +37,63 @@ void ParticlesSource::reset(){
     //reset is called optionally. if you leave it empty nothing is happening
 //    rectColor = ofColor(ofRandom(255),ofRandom(255),ofRandom(255));
     // setup
+    has_triggered = false;
+    positions.clear();
+    vels.clear();
+    accs.clear();
+    for(int i=0 ; i < part_count ; i++) {
+        
+        float r_x = ofRandom(fbo->getWidth());
+        float r_y = ofRandom(fbo->getHeight());
+        if(i%4 == 0) {
+            positions.push_back(ofPoint(r_x, 0));
+        } else if(i%4==1) {
+            positions.push_back(ofPoint(r_x, fbo->getHeight()));
+        } else if(i%4==2) {
+            positions.push_back(ofPoint(0, r_y));
+        } else {
+            positions.push_back(ofPoint(fbo->getWidth(), r_y));
+        }
+        
+        //        positions.push_back(ofPoint(fbo->getWidth()()/2.0, fbo->getHeight()()/2.0));
+        //        positions.push_back(ofPoint(ofRandom(fbo->getWidth()()), ofRandom(fbo->getHeight()())));
+        
+        vels.push_back(ofPoint(ofRandom(-vel_max, vel_max), ofRandom(-vel_max, vel_max)));
+        //        vels.push_back(ofPoint(0,0));
+        accs.push_back(ofPoint(0,0));
+    }
+
 }
 
+void ParticlesSource::setParticleCount(int _part_count) {
+    part_count = _part_count;
+}
+
+void ParticlesSource::setMode(int _part_mode) {
+    mode = _part_mode;
+}
+
+void ParticlesSource::trigger_edge_run(float after) {
+    trigger_time = after;
+}
 
 // Don't do any drawing here
 void ParticlesSource::update(){
     AbstractSource::update();
+    
+    if(!has_triggered) {
+        float timeMillis = ofGetElapsedTimeMillis()-startTime;
+        if(timeMillis > trigger_time) {
+            trigger_edge_run();
+            has_triggered = true;
+        }
+    }
+    
     float t = ofGetFrameNum() / 100.0;
     for(int i=0 ; i < part_count ; i++) {
         
-        
         //update velocities
-        vels[i] += accs[i] * 0.005;
+        vels[i] += accs[i] * 0.01;
         
         // check for turn arounds
         if(positions[i].x < 0) {
@@ -92,12 +137,56 @@ void ParticlesSource::draw(){
     ofClear(0); //clear the buffer
     ofPushStyle();
     ofSetColor(c_max);
-    draw_particle_mesh();
+    
+    switch(mode) {
+        case P_MODE_BALLS:
+            draw_particle_balls();
+            break;
+        case P_MODE_SQUIGGLE1:
+            draw_particle_squiggle_1();
+            break;
+        case P_MODE_SQUIGGLE2:
+            draw_particle_squiggle_2();
+            break;
+        case P_MODE_SQUIGGLE3:
+            draw_particle_squiggle_3();
+            break;
+        case P_MODE_MESH:
+            draw_particle_mesh();
+            break;
+        case P_MODE_LINES1:
+            draw_particle_lines_1();
+            break;
+        case P_MODE_LINES2:
+            draw_particle_lines_2();
+            break;
+        case P_MODE_LINES3:
+            draw_particle_lines_3();
+            break;
+        case P_MODE_CORNER_WEB:
+            draw_corner_web();
+            break;
+        case P_MODE_CORNER_FLARES:
+            draw_corner_flares();
+            break;
+        case P_MODE_GRID_WEB:
+            draw_grid_web();
+            break;
+        case P_MODE_GRID_FLARES:
+            draw_grid_flares();
+            break;
+        case P_MODE_GRID_FLARES_PULSE:
+            draw_grid_flares_pulse();
+            break;
+        default:
+            draw_particle_mesh();
+    }
+    
     ofPopStyle();
 }
 
 void ParticlesSource::draw_grid_web() {
-    float count = 5;
+    float count = 4;
     float spacing = fbo->getWidth() / count;
     float start = spacing/2.0;
     for(int i=0 ; i < count ; i++) {
@@ -112,7 +201,7 @@ void ParticlesSource::draw_grid_web() {
 }
 
 void ParticlesSource::draw_grid_flares() {
-    float count = 5;
+    float count = 4;
     float spacing = fbo->getWidth() / count;
     float start = spacing/2.0;
     for(int i=0 ; i < count ; i++) {

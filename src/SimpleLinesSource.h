@@ -5,7 +5,7 @@
 #include "AbstractSource.h"
 
 #define WIDTH_DEFAULT 10.0
-#define VEL_MAX 10.0
+#define VEL_MAX 3.0
 #define VEL_MIN 0.0
 #define WIDTH_MAX 30.0
 #define WIDTH_MIN 1.0

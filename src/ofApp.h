@@ -47,17 +47,18 @@ class ofApp : public ofBaseApp {
         ParticlesSource * particlesSource1;
         ParticlesSource * particlesSource2;
         vector<SimpleLinesSource*> simpleLinesSources;
-//        SimpleLinesSource * simpleLinesSource;
     
-        SquidSource * squidSource;
+        SquidSource * squidSourceIBOW;
+        SquidSource * squidSourceIBOB;
+        SquidSource * squidSourceIWOB;
     
-        TendrilsSource * tendrilsSource;
+        SquidSource * squidSourceNegIBOB;
+        SquidSource * squidSourceNegIBOW;
+    
+        vector<TendrilsSource*> tendrilsSources;
     
         WhiteSource * whiteSource;
         BlackSource * blackSource;
-    
-    
-    
     
         BouncingBallsSource * bouncingBallsSource;
         MovingRectSource * movingRectSource;

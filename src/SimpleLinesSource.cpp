@@ -29,7 +29,7 @@ void SimpleLinesSource::setAngle(float _angle){
 // Don't do any drawing here
 void SimpleLinesSource::update(){
     AbstractSource::update();
-    float t = ofGetFrameNum() / 100.0;
+    float t = ofGetFrameNum() / 200.0;
     
     for(int i=0 ; i < positions.size() ; i++) {
         

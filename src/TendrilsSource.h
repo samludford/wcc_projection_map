@@ -24,4 +24,10 @@ class TendrilsSource : public AbstractSource {
         vector<ofPoint> parts_dark;
     
         void draw_stripes();
+    
+        bool negative {true};
+    void setNegative(bool _negative);
+    
+        float angle {0.0};
+        void setAngle(float _angle);
 };

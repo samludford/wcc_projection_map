@@ -2,11 +2,10 @@
 
 void SquidSource::setup(){
     AbstractSource::setup();
-    name = "Squid Source";
+//    name = "Squid Source";
 //    rectColor = ofColor(255);
     allocate(800, 800);
-    ofBackground(c_min);
-    ofSetColor(c_min);
+    
 }
 
 void SquidSource::reset(){
@@ -14,6 +13,20 @@ void SquidSource::reset(){
     //reset is called optionally. if you leave it empty nothing is happening
 //    rectColor = ofColor(ofRandom(255),ofRandom(255),ofRandom(255));
     // setup
+//    startTime = ofGetElapsedTimeMillis();
+//    if(fadeInMode == FADE_MAX) {
+//        c_min = (negative) ? C_MAX : C_MIN;
+//    } else if(fadeInMode == FADE_MIN) {
+//        c_max = (negative) ? C_MIN : C_MAX;
+//    } else {
+//        c_min = (negative) ? C_MIN : C_MAX;
+//        c_max = (negative) ? C_MAX : C_MIN;
+//    }
+    
+}
+
+void SquidSource::setNegative(bool _negative) {
+    negative = _negative;
 }
 
 
@@ -36,10 +49,19 @@ void SquidSource::draw(){
     
 //    ofDrawRectangle(20, 20, 60, 60);
     
-    ofPushStyle();
-    ofBackground(c_max);
-    ofSetLineWidth(3);
     ofSetColor(c_min);
+    
+    ofPushStyle();
+    
+    ofSetLineWidth(3);
+    if(!negative) {
+        ofBackground(c_max);
+        ofSetColor(c_min);
+    } else {
+        ofBackground(c_min);
+        ofSetColor(c_max);
+    }
+    
     
     ofPushMatrix();
     ofTranslate(fbo->getWidth()/2, fbo->getHeight()/2);

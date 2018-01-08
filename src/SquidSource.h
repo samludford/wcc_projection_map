@@ -21,5 +21,8 @@ class SquidSource : public AbstractSource {
         float spacing = 10;
         bool second_control = true;
     
+        bool negative {false};
+        void setNegative(bool _negative);
+    
 
 };

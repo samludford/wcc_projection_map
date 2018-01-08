@@ -13,25 +13,87 @@ void ofApp::setup(){
 	// piMapper is able to load the source if it is assigned to
 	// a surface in XML settings.
     
+    squidSourceIBOW = new SquidSource();
+    squidSourceIBOW->setup();
+    squidSourceIBOW->setName("Squid Source");
+    squidSourceIBOW->setFadeIn(FADE_MIN);
+    squidSourceIBOW->setFadeOut(FADE_MAX, 8000.0);
+    piMapper.registerFboSource(squidSourceIBOW);
+    
+    squidSourceIBOB = new SquidSource();
+    squidSourceIBOB->setup();
+    squidSourceIBOB->setName("Squid Source IBOB");
+    squidSourceIBOB->setFadeIn(FADE_MIN);
+    squidSourceIBOB->setFadeOut(FADE_MIN, 8000.0);
+    piMapper.registerFboSource(squidSourceIBOB);
+    
+    squidSourceIWOB = new SquidSource();
+    squidSourceIWOB->setup();
+    squidSourceIWOB->setName("Squid Source IWOB");
+    squidSourceIWOB->setFadeIn(FADE_MAX);
+    squidSourceIWOB->setFadeOut(FADE_MIN, 8000.0);
+    piMapper.registerFboSource(squidSourceIWOB);
+    
+    squidSourceNegIBOB = new SquidSource();
+    squidSourceNegIBOB->setup();
+    squidSourceNegIBOB->setName("Squid Source Negative");
+    squidSourceNegIBOB->setFadeIn(FADE_MIN);
+    squidSourceNegIBOB->setFadeOut(FADE_MIN, 8000.0);
+    squidSourceNegIBOB->setNegative(true);
+    piMapper.registerFboSource(squidSourceNegIBOB);
+    
+    squidSourceNegIBOW = new SquidSource();
+    squidSourceNegIBOW->setup();
+    squidSourceNegIBOW->setName("Squid Source Negative IBOW");
+    squidSourceNegIBOW->setFadeIn(FADE_MIN);
+    squidSourceNegIBOW->setFadeOut(FADE_MAX, 8000.0);
+    squidSourceNegIBOW->setNegative(true);
+    piMapper.registerFboSource(squidSourceNegIBOW);
+    
+    for(int i=0; i<4 ; i++) {
+        float angle = i*90.0;
+        TendrilsSource *ts = new TendrilsSource();
+        ts->setup();
+        if(i==0) {
+            ts->setName( "Tendrils Squares Source");
+        } else {
+            ts->setName( "Tendrils Squares Source " + ofToString(angle));
+        }
+        ts->setAngle(angle);
+        ts->setFadeIn(FADE_MIN);
+        ts->setFadeOut(FADE_MIN, 8000.0);
+        piMapper.registerFboSource(ts);
+        tendrilsSources.push_back(ts);
+    }
+    
     particlesSource0 = new ParticlesSource();
     particlesSource0->setup();
     particlesSource0->setName("Particles Source");
+    particlesSource0->setParticleCount(4);
+    particlesSource0->setMode(P_MODE_GRID_WEB);
+    particlesSource0->trigger_edge_run(12000);
     particlesSource0->setFadeIn(FADE_MIN);
-    particlesSource0->setFadeOut(FADE_MIN, 13000);
+    particlesSource0->setFadeOut(FADE_MIN, 14000);
     piMapper.registerFboSource(particlesSource0);
     
     particlesSource1 = new ParticlesSource();
     particlesSource1->setup();
     particlesSource1->setName("Particles Source 1");
+    particlesSource1->setParticleCount(200);
+    particlesSource1->setMode(P_MODE_CORNER_FLARES);
+    particlesSource1->trigger_edge_run(12000);
     particlesSource1->setFadeIn(FADE_MIN);
-    particlesSource1->setFadeOut(FADE_MIN, 13000);
+    particlesSource1->setFadeOut(FADE_MIN, 14000);
     piMapper.registerFboSource(particlesSource1);
     
     particlesSource2 = new ParticlesSource();
     particlesSource2->setup();
     particlesSource2->setName("Particles Source 2");
+    particlesSource2->setParticleCount(100);
+    particlesSource2->setMode(P_MODE_MESH);
+    particlesSource2->trigger_edge_run(12000);
     particlesSource2->setFadeIn(FADE_MIN);
-    particlesSource2->setFadeOut(FADE_MIN, 13000);
+    particlesSource2->setFadeOut(FADE_MIN, 14000);
     piMapper.registerFboSource(particlesSource2);
     
     for(int i=0; i<4 ; i++) {
@@ -45,20 +107,15 @@ void ofApp::setup(){
         }
         sls->setAngle(angle);
         sls->setFadeIn(FADE_MIN);
-        sls->setFadeOut(FADE_MIN, 13000);
+        sls->setFadeOut(FADE_MIN, 14000);
         piMapper.registerFboSource(sls);
         simpleLinesSources.push_back(sls);
     }
     
-//    simpleLinesSource = new SimpleLinesSource();
-//    simpleLinesSource->setup();
-//    simpleLinesSource->setName("");
-//    piMapper.registerFboSource(simpleLinesSource);
-    
     depthSquaresSource = new DepthSquaresSource();
     depthSquaresSource->setup();
     depthSquaresSource->setName("Depth Squares Source");
-    depthSquaresSource->setFadeOut(FADE_MAX, 7000.0);
+    depthSquaresSource->setFadeOut(FADE_MAX, 8000.0);
     depthSquaresSource->setFadeIn(FADE_MAX);
     depthSquaresSource->setNegative(true);
     piMapper.registerFboSource(depthSquaresSource);
@@ -66,7 +123,7 @@ void ofApp::setup(){
     depthSquaresSourceInWhiteOutBlack = new DepthSquaresSource();
     depthSquaresSourceInWhiteOutBlack->setup();
     depthSquaresSourceInWhiteOutBlack->setName("Depth Squares Source IWOB");
-    depthSquaresSourceInWhiteOutBlack->setFadeOut(FADE_MIN, 7000.0);
+    depthSquaresSourceInWhiteOutBlack->setFadeOut(FADE_MIN, 8000.0);
     depthSquaresSourceInWhiteOutBlack->setFadeIn(FADE_MAX);
     depthSquaresSourceInWhiteOutBlack->setNegative(true);
     piMapper.registerFboSource(depthSquaresSourceInWhiteOutBlack);
@@ -74,7 +131,7 @@ void ofApp::setup(){
     depthSquaresSourceInBlackOutBlack = new DepthSquaresSource();
     depthSquaresSourceInBlackOutBlack->setup();
     depthSquaresSourceInBlackOutBlack->setName("Depth Squares Source IBOB");
-    depthSquaresSourceInBlackOutBlack->setFadeOut(FADE_MIN, 7000.0);
+    depthSquaresSourceInBlackOutBlack->setFadeOut(FADE_MIN, 8000.0);
     depthSquaresSourceInBlackOutBlack->setFadeIn(FADE_MIN);
     depthSquaresSourceInBlackOutBlack->setNegative(true);
     piMapper.registerFboSource(depthSquaresSourceInBlackOutBlack);
@@ -82,20 +139,12 @@ void ofApp::setup(){
     depthSquaresSourceNeg = new DepthSquaresSource();
     depthSquaresSourceNeg->setup();
     depthSquaresSourceNeg->setName("Depth Squares Source Negative");
-    depthSquaresSourceNeg->setFadeOut(FADE_MIN, 7000.0);
+    depthSquaresSourceNeg->setFadeOut(FADE_MIN, 8000.0);
     depthSquaresSourceNeg->setFadeIn(FADE_MIN);
     depthSquaresSourceNeg->setNegative(false);
     piMapper.registerFboSource(depthSquaresSourceNeg);
     
-    squidSource = new SquidSource();
-    squidSource->setup();
-    piMapper.registerFboSource(squidSource);
     
-    
-    
-    tendrilsSource = new TendrilsSource();
-    tendrilsSource->setup();
-    piMapper.registerFboSource(tendrilsSource);
     
     
     
@@ -122,7 +171,7 @@ void ofApp::setup(){
         LineMoveSource *lms = new LineMoveSource();
         lms->setup();
         lms->setName( "Line Move Source " + ofToString(angle));
-        lms->setDuration( 9000.0 );
+        lms->setDuration( 10000.0 );
         lms->setAngle(angle);
         piMapper.registerFboSource(lms);
         lineMoveSources.push_back(lms);
