@@ -10,8 +10,8 @@ void DepthSquaresSource::setup(){
 
 void DepthSquaresSource::reset(){
     AbstractSource::reset();
-    seed1 = ofRandom(5);
-    seed2 = ofRandom(100, 300);
+    seed1 = 0;
+    seed2 = 200.0;
 }
 
 // Don't do any drawing here

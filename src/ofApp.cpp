@@ -69,8 +69,8 @@ void ofApp::setup(){
     particlesSource0 = new ParticlesSource();
     particlesSource0->setup();
     particlesSource0->setName("Particles Source");
-    particlesSource0->setParticleCount(4);
-    particlesSource0->setMode(P_MODE_GRID_WEB);
+    particlesSource0->setParticleCount(50);
+    particlesSource0->setMode(P_MODE_LINES3);
     particlesSource0->trigger_edge_run(12000);
     particlesSource0->setFadeIn(FADE_MIN);
     particlesSource0->setFadeOut(FADE_MIN, 14000);
