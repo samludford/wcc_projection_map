@@ -2,7 +2,7 @@
 
 void SimpleLinesSource::setup(){
     AbstractSource::setup();
-    name = "Simple Lines Source";
+//    name = "Simple Lines Source";
     allocate(800, 800);
     ofBackground(c_min);
     
@@ -21,6 +21,9 @@ void SimpleLinesSource::reset(){
     // setup
 }
 
+void SimpleLinesSource::setAngle(float _angle){
+    angle = _angle;
+}
 
 
 // Don't do any drawing here
@@ -52,12 +55,12 @@ void SimpleLinesSource::update(){
     }
 }
 
-// No need to take care of fbo.begin() and fbo.end() here.
-// All within draw() is being rendered into fbo;
 void SimpleLinesSource::draw(){
-    ofClear(0); //clear the buffer
-    
+    ofClear(0);
     ofPushMatrix();
+    ofTranslate(fbo->getWidth()/2.0, fbo->getHeight()/2.0);
+    ofRotate(angle);
+    ofTranslate(-fbo->getWidth()/2.0, -fbo->getHeight()/2.0);
     ofPushStyle();
     for(int i=0 ; i < positions.size() ; i++) {
         ofSetColor(c_max, alphas[i]);
@@ -65,6 +68,5 @@ void SimpleLinesSource::draw(){
     }
     ofPopStyle();
     ofPopMatrix();
-
 }
 

@@ -18,6 +18,8 @@ class SimpleLinesSource : public AbstractSource {
         void reset();
         float time;
         int lineCount {50};
+        void setAngle(float _angle);
+        float angle;
         vector<float> positions;
         vector<float> vels;
         vector<float> accs;

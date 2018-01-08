@@ -24,6 +24,9 @@ void AbstractSource::reset(){
         c_min = C_MAX;
     } else if(fadeInMode == FADE_MIN) {
         c_max = C_MIN;
+    } else {
+        c_min = C_MIN;
+        c_max = C_MAX;
     }
 }
 

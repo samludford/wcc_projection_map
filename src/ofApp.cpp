@@ -12,26 +12,92 @@ void ofApp::setup(){
 	// FBO sources should be added before piMapper.setup() so the
 	// piMapper is able to load the source if it is assigned to
 	// a surface in XML settings.
+    
+    particlesSource0 = new ParticlesSource();
+    particlesSource0->setup();
+    particlesSource0->setName("Particles Source");
+    particlesSource0->setFadeIn(FADE_MIN);
+    particlesSource0->setFadeOut(FADE_MIN, 13000);
+    piMapper.registerFboSource(particlesSource0);
+    
+    particlesSource1 = new ParticlesSource();
+    particlesSource1->setup();
+    particlesSource1->setName("Particles Source 1");
+    particlesSource1->setFadeIn(FADE_MIN);
+    particlesSource1->setFadeOut(FADE_MIN, 13000);
+    piMapper.registerFboSource(particlesSource1);
+    
+    particlesSource2 = new ParticlesSource();
+    particlesSource2->setup();
+    particlesSource2->setName("Particles Source 2");
+    particlesSource2->setFadeIn(FADE_MIN);
+    particlesSource2->setFadeOut(FADE_MIN, 13000);
+    piMapper.registerFboSource(particlesSource2);
+    
+    for(int i=0; i<4 ; i++) {
+        float angle = i*90.0;
+        SimpleLinesSource *sls = new SimpleLinesSource();
+        sls->setup();
+        if(i==0) {
+            sls->setName( "Simple Lines Source");
+        } else {
+            sls->setName( "Simple Lines Source " + ofToString(angle));
+        }
+        sls->setAngle(angle);
+        sls->setFadeIn(FADE_MIN);
+        sls->setFadeOut(FADE_MIN, 13000);
+        piMapper.registerFboSource(sls);
+        simpleLinesSources.push_back(sls);
+    }
+    
+//    simpleLinesSource = new SimpleLinesSource();
+//    simpleLinesSource->setup();
+//    simpleLinesSource->setName("");
+//    piMapper.registerFboSource(simpleLinesSource);
+    
     depthSquaresSource = new DepthSquaresSource();
     depthSquaresSource->setup();
-    depthSquaresSource->setFadeOut(FADE_MIN, 4000.0);
+    depthSquaresSource->setName("Depth Squares Source");
+    depthSquaresSource->setFadeOut(FADE_MAX, 7000.0);
+    depthSquaresSource->setFadeIn(FADE_MAX);
+    depthSquaresSource->setNegative(true);
     piMapper.registerFboSource(depthSquaresSource);
+    
+    depthSquaresSourceInWhiteOutBlack = new DepthSquaresSource();
+    depthSquaresSourceInWhiteOutBlack->setup();
+    depthSquaresSourceInWhiteOutBlack->setName("Depth Squares Source IWOB");
+    depthSquaresSourceInWhiteOutBlack->setFadeOut(FADE_MIN, 7000.0);
+    depthSquaresSourceInWhiteOutBlack->setFadeIn(FADE_MAX);
+    depthSquaresSourceInWhiteOutBlack->setNegative(true);
+    piMapper.registerFboSource(depthSquaresSourceInWhiteOutBlack);
+    
+    depthSquaresSourceInBlackOutBlack = new DepthSquaresSource();
+    depthSquaresSourceInBlackOutBlack->setup();
+    depthSquaresSourceInBlackOutBlack->setName("Depth Squares Source IBOB");
+    depthSquaresSourceInBlackOutBlack->setFadeOut(FADE_MIN, 7000.0);
+    depthSquaresSourceInBlackOutBlack->setFadeIn(FADE_MIN);
+    depthSquaresSourceInBlackOutBlack->setNegative(true);
+    piMapper.registerFboSource(depthSquaresSourceInBlackOutBlack);
+    
+    depthSquaresSourceNeg = new DepthSquaresSource();
+    depthSquaresSourceNeg->setup();
+    depthSquaresSourceNeg->setName("Depth Squares Source Negative");
+    depthSquaresSourceNeg->setFadeOut(FADE_MIN, 7000.0);
+    depthSquaresSourceNeg->setFadeIn(FADE_MIN);
+    depthSquaresSourceNeg->setNegative(false);
+    piMapper.registerFboSource(depthSquaresSourceNeg);
     
     squidSource = new SquidSource();
     squidSource->setup();
     piMapper.registerFboSource(squidSource);
     
-    simpleLinesSource = new SimpleLinesSource();
-    simpleLinesSource->setup();
-    piMapper.registerFboSource(simpleLinesSource);
+    
     
     tendrilsSource = new TendrilsSource();
     tendrilsSource->setup();
     piMapper.registerFboSource(tendrilsSource);
     
-    particlesSource = new ParticlesSource();
-    particlesSource->setup();
-    piMapper.registerFboSource(particlesSource);
+    
     
     whiteSource = new WhiteSource();
     whiteSource->setup();
@@ -56,7 +122,7 @@ void ofApp::setup(){
         LineMoveSource *lms = new LineMoveSource();
         lms->setup();
         lms->setName( "Line Move Source " + ofToString(angle));
-        lms->setDuration( 3000.0 );
+        lms->setDuration( 9000.0 );
         lms->setAngle(angle);
         piMapper.registerFboSource(lms);
         lineMoveSources.push_back(lms);

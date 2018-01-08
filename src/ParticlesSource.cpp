@@ -2,7 +2,7 @@
 
 void ParticlesSource::setup(){
     AbstractSource::setup();
-    name = "Particles Source";
+//    name = "Particles Source";
 
     allocate(800, 800);
     ofBackground(c_min);

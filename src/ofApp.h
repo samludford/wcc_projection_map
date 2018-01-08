@@ -37,15 +37,27 @@ class ofApp : public ofBaseApp {
 		ofxPiMapper piMapper;
 
         DepthSquaresSource * depthSquaresSource;
+        DepthSquaresSource * depthSquaresSourceInWhiteOutBlack;
+        DepthSquaresSource * depthSquaresSourceInBlackOutBlack;
+        DepthSquaresSource * depthSquaresSourceNeg;
+        vector<FlashSource*> flashSources;
+        vector<LineMoveSource*> lineMoveSources;
+    
+        ParticlesSource * particlesSource0;
+        ParticlesSource * particlesSource1;
+        ParticlesSource * particlesSource2;
+        vector<SimpleLinesSource*> simpleLinesSources;
+//        SimpleLinesSource * simpleLinesSource;
+    
         SquidSource * squidSource;
-        SimpleLinesSource * simpleLinesSource;
+    
         TendrilsSource * tendrilsSource;
-        ParticlesSource * particlesSource;
+    
         WhiteSource * whiteSource;
         BlackSource * blackSource;
     
-        vector<FlashSource*> flashSources;
-        vector<LineMoveSource*> lineMoveSources;
+    
+    
     
         BouncingBallsSource * bouncingBallsSource;
         MovingRectSource * movingRectSource;
